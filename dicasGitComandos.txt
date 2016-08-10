@@ -1,4 +1,6 @@
 git pull - para atualizar o projeto localmente a partir do servidor
+git pull origin master - atualiza o branch master no diretório do projeto
+
 
 git branch atualizacao01 - criando um ramo com o nome atualizacao01
 
