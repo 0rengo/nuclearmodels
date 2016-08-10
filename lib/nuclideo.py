@@ -1,35 +1,44 @@
 class Nuclideo(object):
-    descricao = ''
-    z = 0 #numero atomico
-    a = 0 #massa atomica
-    nivel = 0 #nivel energetico
-    sub_nivel = 0 #subnivel energetico
-    j = 0 #desdobramento do subnivel
-    energia = 0 #energia do nivel
-    spin = 0.0 #resultado do desdobramento
-    paridade = 0 #resultado do desdobramento
-    momento_magnetico = 0.0
-    tipo = '' #se neutron ou proton
+    description = ''
+    z = 0 #atomic number
+    a = 0 #atomic mass
+    level = 0 #energy level
+    sub_level = 0 #energy sublevel
+    j = 0 #split energy sublevel
+    spin = 0.0
+    parity = 0
+    magnetic_moment = 0.0
+    nucleon_type = '' #(neutron,proton)
 
-    def __init__(self, descricao='', z=0, a=0):
-        self.descricao = descricao
+
+    def __init__(self, description='', z=0, a=0):
+        self.description = description
         self.z = z
         self.a = a
-        self.desdobrar()
+        # self.split_level_energy()
 
     @property
-    def numero_neutrons(self):
+    def neutrons_amount(self):
        return self.a - self.z
 
-    def definir_tipo_desdobramento(self):
+    @property
+    def energy_fermi(self):
+        pass
+    
+    @property
+    def nuclear_radius(self):
+        R0 = 1.2*10**-15
+        return self.a**(1./3.)*R0
+
+    def define_type_unpaired_spin(self):
         pass
 
-    def desdobrar(self):
-        self.definir_tipo_desdobramento()
+    def split_level_energy(self):
+        self.define_type_unpaired_spin()
         pass
 
-    def calcular_momento_magnetico(self):
+    def calc_magnetic_moment(self):
         pass
 
-    def calcular_momento_magnetico_schmidt(self):
+    def calc_magnetic_moment_schmidt(self):
         pass
