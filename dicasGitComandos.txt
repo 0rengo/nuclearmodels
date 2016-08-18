@@ -1,3 +1,5 @@
+git clone caminho_remoto 
+
 git pull - para atualizar o projeto localmente a partir do servidor
 git pull origin master - atualiza o branch master no diretório do projeto
 
@@ -23,3 +25,5 @@ git merge nomeBranchASerTrazido - mescla um branch para o master
 git branch -d nomeBranch - remove o branch
 
 git push origin :nomeBranch - executado depois do remover para retirar do servidor
+
+
