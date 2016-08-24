@@ -1,7 +1,6 @@
-class Nuclideo(object):
-    description = ''
-    z = 0 #atomic number
-    a = 0 #atomic mass
+from nuclide_base import NuclideBase
+
+class Nuclide(NuclideBase):
     level = 0 #energy level
     sub_level = 0 #energy sublevel
     j = 0 #split energy sublevel
@@ -10,12 +9,6 @@ class Nuclideo(object):
     magnetic_moment = 0.0
     nucleon_type = '' #(neutron,proton)
 
-
-    def __init__(self, description='', z=0, a=0):
-        self.description = description
-        self.z = z
-        self.a = a
-        # self.split_level_energy()
 
     @property
     def neutrons_amount(self):
