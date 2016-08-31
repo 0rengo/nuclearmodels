@@ -1,3 +1,5 @@
+git clone endereço - para clonar um projeto
+
 git pull - para atualizar o projeto localmente a partir do servidor
 git pull origin master - atualiza o branch master no diretório do projeto
 
