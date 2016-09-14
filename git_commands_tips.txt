@@ -1,4 +1,8 @@
+<<<<<<< HEAD:dicasGitComandos.txt
 git clone caminho_remoto 
+=======
+git clone endereço - para clonar um projeto
+>>>>>>> 964bac5ca087c8c2e5515ef5d8fe784e83a46cce:git_commands_tips.txt
 
 git pull - para atualizar o projeto localmente a partir do servidor
 git pull origin master - atualiza o branch master no diretório do projeto
