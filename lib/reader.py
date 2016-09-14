@@ -10,7 +10,8 @@ class Reader(object):
         try:
             self.file = open(file_name,"r")
         except Exception as e:
-            print e.message
+            # print e.message
+            raise e
 
     def read_z(self, z):
         try:
@@ -20,14 +21,6 @@ class Reader(object):
                 item = tuple(line.split())
                 nuclide = NuclideData()
                 nuclide.z, nuclide.a, nuclide.symbol, nuclide.be_a, nuclide.mass_u, nuclide.name = item
-                # nuclide = {
-                #     'z': item[0],
-                #     'a': item[1],
-                #     'symbol': item[2],
-                #     'be_a': item[3],
-                #     'mass_u': item[4],
-                #     'name': item[5],
-                # }
                 if (int(nuclide.z)==z):
                     self.data.append(nuclide)            
         except Exception as e:
