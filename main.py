@@ -6,17 +6,20 @@ from lib.reader import Reader
 # print nuclideo_teste.description
 
 
+try:
+    reader = Reader('dadosNucleares2asdfasdf.txt')
+    reader.read_z(120)
 
-# reader = Reader('dadosNucleares2.txt')
-# reader.read_z(4)
+    for i in reader.data:
+        print i.symbol
+        print i.a
+        print i.z
+        print i.name
+except Exception, e:
+    print 'File not found'
 
-# for i in reader.data:
-#     print i.symbol
-#     print i.a
-#     print i.z
-#     print i.name
 
-from lib.nuclide_base import NuclideBase
+# from lib.nuclide_base import NuclideBase
 
-n = NuclideBase()
-print n
+# n = NuclideBase()
+# print n
