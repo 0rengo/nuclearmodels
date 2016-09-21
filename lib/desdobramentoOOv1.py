@@ -1,7 +1,13 @@
 # coding: UTF-8
-# Classe "Desdobre": desdobra os níveis de energia nucleares (spin/paridade)
+# Classe "SplitLevel": desdobra os níveis de energia nucleares (spin/paridade)
 
-class Desdobre:
+
+
+class SplitLevel(object):
+
+    l = None
+    subnivel
+
     def desdobramento(nucleons):
         if nucleons >= 1 and nucleons <=2 :
             l = 0
