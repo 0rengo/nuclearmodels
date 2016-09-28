@@ -22,17 +22,20 @@ raio0 = 1.25*10**(-15) # 1.25e-15 e em metros
 
 raionuclear = raio0*A**(1/3)
 
+#pass
 # calcula a energia do Nivel de Fermi
 # constantes
-hcortadoc = 197.3269631 # em MeV fm
-massanucleonc2 # deve ser escolhido entre massaprotonc2 e massaneutronc2, se for respectivamente, próton ou nêutron
-massaprotonc2 = 938.272013 # em MeV
-massaneutronc2 = 939.565346 # em MeV
+hbar_c = 197.3269631 # em MeV fm
+massnucleon_c2 # deve ser escolhido entre massaprotonc2 e massaneutronc2, se for respectivamente, próton ou nêutron
+massprotonc2 = 938.272013 # em MeV
+massneutronc2 = 939.565346 # em MeV
 pi = 3.14159265359
 nF # deve ser escolhido entre Z e N, se for respectivamente, próton ou nêutron
-raio0fm = 1.25 # em fm
-
-energiaFermi = ((nF*9.0*pi/4.0*A)**(2/3))*hcortadoc**2/2.0*massanucleonc2*raio0fm**2
+radius0_fm = 1.25 # em fm
+# O calculo
+energyFermi = ((nF*9.0*pi/4.0*A)**(2./3.))*hcortadoc**2/2.0*massanucleonc2*raio0fm**2
+# A altura do poco de potencial (em MeV)
+v0 = energyFermi + 8.0
 
 # calcula o momento de dipolo magnetico
 # precisa do "desdobramento"
