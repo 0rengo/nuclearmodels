@@ -26,8 +26,9 @@
 
 from lib.define_type_unpaured_spin import DefineTypeUnpauredSpin
 
+teste = int(input(" Input value of Z (atomic number) or N (neutron number): "))
 
-obj = DefineTypeUnpauredSpin(5)
+obj = DefineTypeUnpauredSpin(teste)
 print obj.level
 print obj.sub_level
 print obj.j
