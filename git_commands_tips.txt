@@ -4,13 +4,15 @@ git pull - para atualizar o projeto localmente a partir do servidor
 git pull origin master - atualiza o branch master no diretório do projeto
 
 
-git branch atualizacao01 - criando um ramo com o nome atualizacao01
+git branch atualizacao01 - criando um ramo com o nome atualizacao01 (por exemplo)
 
 git checkout atualizacao01 - localmente, trocou-se o foco dos arquivos para atualizacao01
 
+===================
+
 depois das atualizações localmente
 
-git status
+git status - verifica a situação do servidor e da máquina local
 
 git add . - adiciona as alterações
 

@@ -9,6 +9,7 @@ class Nuclideo(object):
     parity = 0
     magnetic_moment = 0.0
     nucleon_type = '' #(neutron,proton)
+    
 
 
     def __init__(self, description='', z=0, a=0):
@@ -42,3 +43,4 @@ class Nuclideo(object):
 
     def calc_magnetic_moment_schmidt(self):
         pass
+
