@@ -4,7 +4,7 @@ from nuclide_data import NuclideData
 #leitor do arquivo de dados
 class Reader(object):
     file = None
-    data = []
+    nuclide = None
 
     def __init__(self, file_name):
         try:
@@ -13,24 +13,19 @@ class Reader(object):
             # print e.message
             raise e
 
-    def read_z(self, z):
+    def read_z_a(self, z, a):
         try:
-            if z < 1 or z > 118:
-                raise Exception('Invalid atomic number!')
             for line in self.file:
                 item = tuple(line.split())
-                nuclide = NuclideData()
-                nuclide.z, nuclide.a, nuclide.symbol, nuclide.be_a, nuclide.mass_u, nuclide.name = item
-                if (int(nuclide.z)==z):
-                    self.data.append(nuclide)            
+                if (int(nuclide.z)==z and int(nuclide.a)==a):
+                    self.nuclide = NuclideData()
+                    self.nuclide.z, self.nuclide.a, self.nuclide.symbol, self.nuclide.be_a, self.nuclide.mass_u, self.nuclide.name = item
+                    
+            if not self.data:
+                raise Exception('Invalid mass number or atomic number!')         
         except Exception as e:
             print e.message
         self.file.close()
-
-
-
-    def read_a(a):
-        pass
 
 
     # for line in self.file:

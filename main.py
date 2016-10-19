@@ -1,5 +1,5 @@
 # coding: utf-8
-# from lib.nuclide import Nuclide
+from lib.nuclide import Nuclide
 # from lib.reader import Reader
 # nuclideo_teste = Nuclideo(description=u'Hidrogênio', z=1, a=1)
 # print nuclideo_teste.nuclear_radius
@@ -24,13 +24,17 @@
 # n = NuclideBase()
 # print n
 
-from lib.define_type_unpaured_spin import DefineTypeUnpauredSpin
+# from lib.define_type_unpaured_spin import DefineTypeUnpauredSpin
 
-teste = int(input(" Input value of Z (atomic number) or N (neutron number): "))
+# teste = int(input(" Input value of Z (atomic number) or N (neutron number): "))
 
-obj = DefineTypeUnpauredSpin(teste)
-print obj.level
-print obj.sub_level
-print obj.j
-print obj.energy_level
-print obj.parity
+# obj = DefineTypeUnpauredSpin(teste)
+# print obj.level
+# print obj.sub_level
+# print obj.j
+# print obj.energy_level
+# print obj.parity
+
+
+nuc = Nuclide(z=int(input(" Input value of Z: ")), a=int(input(" Input value of a: ")))
+print nuc.nucleons

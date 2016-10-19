@@ -1,5 +1,9 @@
+# coding: utf-8
+
 from nuclide_base import NuclideBase
-from desdobramentoOOv1 import SplitLevel
+# from desdobramentoOOv1 import SplitLevel
+from define_type_unpaured_spin import DefineTypeUnpauredSpin
+
 
 class Nuclide(NuclideBase):
     level = 0 #energy level
@@ -40,14 +44,31 @@ class Nuclide(NuclideBase):
     @property
     def nucleons(self):
         if self.z%2 == 0 and self.neutrons%2 == 1:
-            self._define_type_unpaired_spin(self.neutrons)
-            nucleon_type = 'neutron'
+            unpaired_nucleon = DefineTypeUnpauredSpin(self.neutrons)
+            return {
+                    'nucleon_type': 'neutron',
+                    'range_neutron': unpaired_nucleon,
+                    'range_proton': None,
+                    'result': unpaired_nucleon.parity
+                }
         elif self.z%2 == 1 and self.neutrons%2 == 0:
-            self._define_type_unpaired_spin(self.z)
-            nucleon_type = 'proton'
+            unpaired_nucleon = DefineTypeUnpauredSpin(self.z)
+            return {
+                    'nucleon_type': 'proton',
+                    'range_neutron': None,
+                    'range_proton': unpaired_nucleon,
+                    'result': unpaired_nucleon.parity
+                }
+
         elif self.z%2 == 1 and self.neutrons%2 == 1:
-            self._define_type_unpaired_spin(self.z)
-            nucleon_type = 'proton and neutron'
+            unpaired_nucleon_1 = DefineTypeUnpauredSpin(self.neutrons)
+            unpaired_nucleon_2 = DefineTypeUnpauredSpin(self.z)
+            return {
+                    'nucleon_type': 'proton and neutron',
+                    'range_neutron': unpaired_nucleon_1,
+                    'range_proton': unpaired_nucleon_2,
+                    'result': unpaired_nucleon_1.parity * unpaired_nucleon_2.parity
+                }            
 
     def split_level_energy(self):
         self.define_type_unpaired_spin()
