@@ -36,5 +36,11 @@ from lib.nuclide import Nuclide
 # print obj.parity
 
 
-nuc = Nuclide(z=int(input(" Input value of Z: ")), a=int(input(" Input value of a: ")))
-print nuc.nucleons
+# nuc = Nuclide(z=int(input(" Input value of Z: ")), a=int(input(" Input value of a: ")))
+# print nuc.nucleons
+
+#testar downloader arquivo de dados
+from lib.download_nuclear_data_file import DownloadNuclearDataFile
+
+dwd = DownloadNuclearDataFile()
+dwd.download_to(path='/home/robertson/GrupoEstudoPython/nuclearmodels/data_files')
