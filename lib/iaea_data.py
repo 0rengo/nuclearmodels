@@ -1,4 +1,4 @@
-from import reader import Reader
+from reader import Reader
 from nuclide import Nuclide
 
 class IAEAData(object):
@@ -13,8 +13,9 @@ class IAEAData(object):
         try:
             reader = Reader(file_name)
             reader.read_z_a(self.z, self.a)
-            nuclide = Nuclide(reader.nuclide_data.z,
-                              reader.nuclide_data.a, )
+            nuclide = Nuclide(name=reader.nuclide_data.name, z=int(reader.nuclide_data.z),
+                              a=int(reader.nuclide_data.a))
+            return nuclide
         except Exception, e:
             raise e
         

@@ -1,5 +1,4 @@
 # coding: utf-8
-from lib.nuclide import Nuclide
 # from lib.reader import Reader
 # nuclideo_teste = Nuclideo(description=u'Hidrogênio', z=1, a=1)
 # print nuclideo_teste.nuclear_radius
@@ -40,7 +39,19 @@ from lib.nuclide import Nuclide
 # print nuc.nucleons
 
 #testar downloader arquivo de dados
-from lib.download_nuclear_data_file import DownloadNuclearDataFile
+# from lib.download_nuclear_data_file import DownloadNuclearDataFile
 
-dwd = DownloadNuclearDataFile()
-dwd.download_to(path='/home/robertson/GrupoEstudoPython/nuclearmodels/data_files')
+# dwd = DownloadNuclearDataFile()
+# dwd.download_to(path='/home/robertson/GrupoEstudoPython/nuclearmodels/data_files')
+
+from lib.iaea_data import IAEAData
+z = int(input(" Input value of Z (atomic number): "))
+a = int(input(" Input value of A (mass number)  : "))
+data = IAEAData(z, a)
+try:
+    nuclide = data.get_nuclide_from_file('dados.txt')
+    print nuclide.name
+    print nuclide.nuclear_radius
+    print nuclide.nucleons
+except Exception as e:
+    print e
