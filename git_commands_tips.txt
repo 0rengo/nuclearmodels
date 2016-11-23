@@ -27,3 +27,5 @@ git merge nomeBranchASerTrazido - mescla um branch para o master
 git branch -d nomeBranch - remove o branch
 
 git push origin :nomeBranch - executado depois do remover para retirar do servidor
+
+
